@@ -1,0 +1,10 @@
+insert user:
+    INSERT INTO `users` (`user_name`, `email`, `password`, `date`) 
+    VALUES ('', '', '', '2022-11-03 20:45:30.000000')
+
+
+insert product:
+    INSERT INTO `products` (`id`, `name_pro`, `price`, `image`) 
+    VALUES (NULL, '', '', '')    
+
+    
