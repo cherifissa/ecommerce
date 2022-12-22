@@ -13,7 +13,7 @@ $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8" />
@@ -87,17 +87,17 @@ $result = $conn->query($sql);
             </div>
         </div>
     </header>
-    <!-- Section-->
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
+    <!-- div-->
+    <div class="py-3 mx-5">
+        <div class="px-5 px-3 mt-5">
 
-            <div class="row  gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="row gx-lg-2 row-5 row-md-4 row-cols-xl-5">
                 <?php 
               if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                      
             ?>
-                <div class="col mb-5">
+                <div class="col mb-4">
                     <div class="card h-100">
                         <!-- Sale badge-->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">En
@@ -136,7 +136,7 @@ $result = $conn->query($sql);
 
             </div>
         </div>
-    </section>
+    </div>
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">

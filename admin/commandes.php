@@ -40,10 +40,13 @@ else {
                     <!-- <li class="nav-item"><a class="nav-link active" aria-current="page"
                             href="commandes.php">Commandes</a>
                     </li> -->
-                    <li class="nav-item"><a class="nav-link active" href="produit.php">produits</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="produit.php">Produits</a></li>
+
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="addproduct.php">Ajouter
                             un produit
                         </a>
+                    <li class="nav-item"><a class="nav-link active" href="message.php">Messages</a></li>
+
                     </li>
                 </ul>
                 <form class="d-flex">

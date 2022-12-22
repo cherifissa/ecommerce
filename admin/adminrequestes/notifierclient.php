@@ -1,6 +1,7 @@
 <?php
 require '../../usersrequestes/base.php';
 require '../../PHPMailer/PHPMailerAutoload.php';
+
 $idclient = $_GET['id'];
 $idcommande = $_GET['commande'];
 
@@ -17,12 +18,12 @@ $sql ="SELECT * FROM commandes WHERE code_com='$idcommande' LIMIT 1";
 $result = $conn->query($sql);
     if ($result->num_rows == 1) {
         while($row = $result->fetch_assoc()) {      
-            $date = $row["date_com"];
+            $date1 =explode(' ',$row["date_com"]);
+            $date= date('d/m/Y ' , strtotime($row["date_com"]));
             $quantite = $row["quantité"];
             $prix = $row["prix"];
         }
-    }    
-
+     }    
     $mail = new PHPMailer;
     $mail->isSMTP();
     $mail->SMTPSecure = 'ssl';
@@ -34,9 +35,10 @@ $result = $conn->query($sql);
     $mail->setFrom('jalabiyashop@gmail.com');
     $mail->addAddress($clientemail);
     $mail->Subject = 'Notification sur votre commande depuis Jalabiya';
-    $mail->Body = "Cher(e) client(e) Votre commandes N°$idcommande est en cours de validation, veuillez payer la somme de $prix pour le(s) $quantite article(s) commandé(s) le $date ";
+    $mail->Body = "Cher(e) client(e) Votre commandes N°$idcommande est en cours de validation, veuillez payer la somme de $prix cfa pour le(s) $quantite article(s) commandé(s) le $date à $date1[1]";
+    
     // send the message, check for errors
-    if (!$mail->send()) {
+    if ($mail->send()) {
         echo '<script>
             alert("Email envoyé avec succes !");
             window.location.href="../commandes.php";

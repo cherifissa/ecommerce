@@ -134,7 +134,7 @@
                 <div class="col-md-3 text-center">
                     <ul class="list-unstyled mb-0">
                         <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                            <p>Lomé, NY 94126, TOGO</p>
+                            <p>Lomé, NY Rue Oga, TOGO</p>
                         </li>
 
                         <li><i class="fas fa-phone mt-4 fa-2x"></i>

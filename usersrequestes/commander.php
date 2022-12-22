@@ -45,19 +45,17 @@
                 <form class="d-flex">
 
 
-
-
                     <a class="nav-link disabled" aria-current="page" href="#"> <?php echo $_SESSION['name']; ?> </a>
 
                     <?php
-            if ($_SESSION['name']== "Non connecté") {
-              echo '<a class="btn nav-link link-success" href="login.php">Connecter</a>';
-            }
-            else {
-              echo '<a class="btn nav-link link-success" href="signout.php">Deconnecter</a>';
-            }
+                        if ($_SESSION['name']== "Non connecté") {
+                        echo '<a class="btn nav-link link-success" href="../login.php">Connecter</a>';
+                        }
+                        else {
+                        echo '<a class="btn nav-link link-success" href="../signout.php">Deconnecter</a>';
+                        }
 
-          ?>
+                    ?>
                     <button class="btn btn-outline-light" type="submit">
                         <i class="bi-cart-fill me-1"></i>
                         Carte
@@ -67,22 +65,37 @@
             </div>
         </div>
     </nav>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-md-6 col-log-2">
+                <div class="card ">
+                    <img class="card-img-top" src="../images/<?=$row["image"]?>" alt="image">
+                    <div class="card-body ">
+                        <h5 class="card-title fs-2"><?=$row["name_pro"] ?></h5>
+                        <div class="text">
+                            <p class="card-text">Prix:<?=$row["prix"] ?></p>
+                        </div>
+                        <div class="pt-1 mb-4 ">
+                            <form action="insertcommandes.php?id=<?=$code?>" method='POST'>
+                                <b>QT:</b> <input type="number" value="1" name="nombre" min="1">
+                                <input class="btn btn-dark btn-lg" name='submit' type="submit" value="Commander">
 
-    <div class="col-sm-5 col-md-4 col-log-2">
-        <div class="card ">
-            <img class="card-img-top" src="../images/<?=$row["image"]?>" alt="image">
-            <div class="card-body ">
-                <h5 class="card-title "><?=$row["name_pro"] ?></h5>
-                <div class="text">
-                    <p class="card-text">Prix:<?=$row["prix"] ?></p>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="pt-1 mb-4 ">
-                    <form action="insertcommandes.php?id=<?=$code?>" method='POST'>
-                        QT: <input type="number" value="1" name="nombre" min="1">
-                        <input class="btn btn-dark btn-lg" name='submit' type="submit" value="Commander">
+            </div>
+            <div class="col-sm-5 col-md-5 col-log-3">
+                <br>
+                <br>
+                <br>
+                <p class="fs-1"><b>Description du produit</b> </p>
+                <p class="fs-3">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex qui laudantium et alias rem quasi esse
+                    architecto, vel iste sunt dolorum odio nostrum quibusdam ut? Magni numquam rerum neque nam!
+                </p>
 
-                    </form>
-                </div>
             </div>
         </div>
 

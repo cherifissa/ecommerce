@@ -42,6 +42,8 @@ if ($_SESSION['admin'] == "Non connecté") {
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="addproduct.php">Ajouter
                             un produit
                         </a>
+                    <li class="nav-item"><a class="nav-link active" href="message.php">Messages</a></li>
+
                     </li>
                 </ul>
                 <form class="d-flex">
